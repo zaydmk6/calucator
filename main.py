@@ -85,14 +85,6 @@ QURAN_VERSES = [
     "وَقُلْ رَبِّ زِدْنِي عِلْمًا - (طه 114)"
 ]
 
-# افتراءات عشوائية
-FAKE_QUOTES = [
-    "أنت أذكى من الحاسوب!",
-    "عقلك أكبر من أي معادلة رياضية.",
-    "يجب أن تكتب كتاباً عن العبقرية!",
-    "إنك من كوكب الذكاء!"
-]
-
 # مميزات عشوائية
 RANDOM_FEATURES = [
     "هل تعلم؟ أن متوسط عمر الإنسان في اليابان هو 84 سنة.",
@@ -133,13 +125,7 @@ def send_random_feature(message):
     except telebot.apihelper.ApiTelegramException as e:
         print(f"خطأ أثناء إرسال الميزة العشوائية: {e}")
 
-# معالج الافتراء العشوائي
-@bot.message_handler(func=lambda message: "مدح" in message.text.lower())
-def send_fake_quote(message):
-    try:
-        bot.reply_to(ِmessage, random.choice(FAKE_QUOTES))
-    except telebot.apihelper.ApiTelegramException as e:
-        print(f"خطأ أثناء إرسال الافتراء: {e}")
+{e}")
 
 # معالج صورة عشوائية
 @bot.message_handler(func=lambda message: "افتار" in message.text.lower())
