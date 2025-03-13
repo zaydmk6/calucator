@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>الرئيسية</title>
+</head>
+<body>
+    <h1>مرحبًا في الموقع</h1>
+    {% if current_user.is_authenticated %}
+        <p>مرحبًا، {{ current_user.username }}!</p>
+        <a href="{{ url_for('logout') }}">تسجيل الخروج</a>
+        {% if current_user.is_admin %}
+            <a href="{{ url_for('admin') }}">لوحة التحكم</a>
+        {% endif %}
+    {% else %}
+        <a href="{{ url_for('login') }}">تسجيل الدخول</a>
+    {% endif %}
+</body>
+</html>
